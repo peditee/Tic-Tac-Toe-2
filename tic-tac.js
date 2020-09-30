@@ -6,6 +6,7 @@
 
 //import my nodes/cells as buttons
 
+alert('Welcome to Tic Tac Toe: The Game of Kings. O Goes first. GOOD LUCK!')
 
 var button_divs = document.querySelectorAll('.cell')
 var button_reset = document.querySelector('.reset')
@@ -19,8 +20,9 @@ function addLetter (event) {
     } else {
         event.target.textContent = 'X';
     }
-    checkVictory();
     go_counter++;
+    checkVictory();
+    
 }
 
 
@@ -143,11 +145,12 @@ function checkVictory() {
             victoryMessageO()
             break
         }
-        else if (go_counter == 9){
+        if (go_counter == 9){
             drawMessage()
             break
         }
-    }
+    } 
+    
 }
 
 function victoryMessageO() {
@@ -165,3 +168,23 @@ function drawMessage() {
 
 //The next focus is on the process of drawing - likely we'll need to add an if to establish or ---- just an else // nope
 //an else statement doesn't work, we have to think agout 
+
+//OK so the drawMessage function now works 
+
+//Next task is to change console logs to announcements
+
+//put a pin in the message pronouncements and work on that later
+
+//next work on some style - 
+//1. centralise the box 
+//2. centralise the x's and o's
+//3. increase the size of the x's and o's
+//4. centralise the main box vertically + the reset button move to central and below
+//5 mkae the reset button central, and 
+//6 make the reset button larger
+//7 Then move to give popups to the win and draw messages. 
+//8 create a background 
+//9 start adding the bonus features
+
+//10 need to find a way of definitively ending the game too- message and all
+

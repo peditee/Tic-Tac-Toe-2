@@ -6,12 +6,32 @@
     border-style: solid;
     height: 300px;
     width:300px;
+    margin:0 auto;
 }
 
 .cell {
     border-style: solid;
     text-align: center;
-   
+    vertical-align: middle;
+    line-height: 90px;
+    font-size: 90px;
+
+}
+
+.reset-container {
+    margin:0 auto;
+    position: relative;
+    text-align: center;
+    
+    
+}
+
+.reset {
+    background-color: purple;
+    color: white;
+    width: 305px;
+
+
 }
 
 
