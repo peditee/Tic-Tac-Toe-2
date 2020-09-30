@@ -1,10 +1,42 @@
-//jumping off point - we want to click in a cell and add an x
-//to that end we must
-// -set an event listener for a click on that 
-// -when it is clicked we must invoke a function
-// -that function must add an X to the innerHTML of a selected div
+// Technical Requirements
+// Your app must:
 
-//import my nodes/cells as buttons
+// Render a game in the browser
+// Switch turns between more than one player
+// Design logic for winning & visually display which player won
+// Include separate HTML / CSS / JavaScript files
+// Stick with KISS (Keep It Simple Stupid) principles
+// Use Javascript for DOM manipulation
+// Deploy your game online, where the rest of the world can access it
+// Use semantic markup for HTML and CSS (adhere to best practices)
+// Necessary Deliverables
+// At least one artefact of either pseudocode, flow diagram, wireframe, mockup or storyboard demonstrating planning - Due tomorrow
+// A working game, that can win, draw & lose, built by you, hosted somewhere on the internet
+// A link to your hosted working game in the URL section of your GitHub repo
+// A git repository hosted on GitHub, with a link to your hosted game, and frequent commits dating back to the very beginning of the project
+// A readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
+// Submission & presentation on Friday 2:30pm
+// Bonus extensions
+// These are for extra credit! DON'T focus on these until you've hit the core requirements.
+
+// Keep track of multiple game rounds with a win counter
+// Allow game customizable options, time limits, board size, game rounds, name & profiles etc
+// Allow players to customize their token (X, O, name, picture, avatar etc)
+// Get inventive with your styling - research CSS effects, animations to spiff things up
+// Research LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
+// Use timers to display "waiting..." messages while users are waiting to be matched
+// Research web audio API and add sound effects to your game
+// Be creative! Bend the rules and give it a twist!
+
+
+
+// //jumping off point - we want to click in a cell and add an x
+// //to that end we must
+// // -set an event listener for a click on that 
+// // -when it is clicked we must invoke a function
+// // -that function must add an X to the innerHTML of a selected div
+
+// //import my nodes/cells as buttons
 
 alert('Welcome to Tic Tac Toe: The Game of Kings. O Goes first. GOOD LUCK!')
 
@@ -183,8 +215,26 @@ function drawMessage() {
 //5 mkae the reset button central, and 
 //6 make the reset button larger
 //7 Then move to give popups to the win and draw messages. 
-//8 create a background 
-//9 start adding the bonus features
+//8 create a background - try a plane theme- sky etc 
+//9 centralise the grid on the vertical plane
+//10 start adding the bonus features
 
-//10 need to find a way of definitively ending the game too- message and all
+//11 need to find a way of definitively ending the game too- message and all
+
+
+//======================================
+// BONUS Requirements
+
+// Keep track of multiple game rounds with a win counter
+// Allow game customizable options, time limits, board size, game rounds, name & profiles etc
+// Allow players to customize their token (X, O, name, picture, avatar etc)
+// Get inventive with your styling - research CSS effects, animations to spiff things up
+// Research LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
+// Use timers to display "waiting..." messages while users are waiting to be matched
+// Research web audio API and add sound effects to your game
+// Be creative! Bend the rules and give it a twist!
+
+
+
+/// just  a thought but a sky theme with a plane flying across at the end towing the message "you've won" could work
 
