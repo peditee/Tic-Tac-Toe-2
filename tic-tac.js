@@ -44,11 +44,14 @@ var button_divs = document.querySelectorAll('.cell')
 var button_reset = document.querySelector('.reset')
 
 var go_counter = 0;
+///+++=+++++++++++++++++++++++++++
+
+///++++++++++++++++++++++++++++++++
+var game_counter = 0;
+var game_counter_variab = document.querySelector('.counter-game-number')
 
 
-
-
-function addLetter (event) {
+function addLetterXfirst (event) {
     if (go_counter % 2 == 0) {
         event.target.textContent = 'O';
         
@@ -59,17 +62,35 @@ function addLetter (event) {
     checkVictory();
     
 }
-
-
-
-for(var i = 0; i < button_divs.length; i++) {
-    button_divs[i].addEventListener('click', addLetter)
+function addLetterOfirst (event) {
+    if (go_counter % 2 == 0) {
+        event.target.textContent = 'X';
+        
+    } else {
+        event.target.textContent = 'O';
+    }
+    go_counter++;
+    checkVictory();
+    
 }
+
+if (game_counter % 2 == 0) {
+    for(var i = 0; i < button_divs.length; i++) {
+        button_divs[i].addEventListener('click', addLetterXfirst)
+    }
+    
+    
+} else {
+    for(var i = 0; i < button_divs.length; i++) {
+        button_divs[i].addEventListener('click', addLetterOfirst)
+    }
+}       
 
 
 button_reset.addEventListener('click', reset_game)
 
 function reset_game() {
+    
     go_counter = 0;
     for (var i = 0; i < button_divs.length; i++) {
         button_divs[i].textContent = '';
@@ -80,7 +101,10 @@ function reset_game() {
 // Blue skying the process of players 1+2 assignment and turns
 // second function for adding letters where O goes first
 // if statemnet in front ofd the event listener click assignment at the start. Have a Gaame Counter variable to base this on. If even then Os go first if odd then Xs go first 
+// hazard test by manually adding the game_counter if it's Odd then x's should be going first if even then Os
+//we have managed to makeit switch and established a game counter, we need now to 
 
+//next goal: increment the game_counter variable. This will just mean any time a winning state is achieved that we add 1 to the game_counter 
 
 //Messaging Section - adding revealing elements
 
@@ -133,109 +157,128 @@ function revealElement(element) {
 function checkVictory() {
     for(var j = 0; j < button_divs.length; j++) {
         if (button_divs[0].textContent == "X" && button_divs[1].textContent == "X" && button_divs[2].textContent == "X") {
-
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageX()
             
             
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[1].textContent == "O" && button_divs[2].textContent == "O") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageO()
             
             break
         }
         if (button_divs[3].textContent == "X" && button_divs[4].textContent == "X" && button_divs[5].textContent == "X") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageX()
             
             break
         }
         if (button_divs[3].textContent == "O" && button_divs[4].textContent == "O" && button_divs[5].textContent == "O") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageO()
             
             break
         }
         if (button_divs[6].textContent == "X" && button_divs[7].textContent == "X" && button_divs[8].textContent == "X") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageX()
             
             break
         }
         if (button_divs[6].textContent == "O" && button_divs[7].textContent == "O" && button_divs[8].textContent == "O") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageO()
             
             break
         }
         if (button_divs[0].textContent == "X" && button_divs[3].textContent == "X" && button_divs[6].textContent == "X") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageX()
             
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[3].textContent == "O" && button_divs[6].textContent == "O") {
-           
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageO()
             
             break
         }
         if (button_divs[1].textContent == "X" && button_divs[4].textContent == "X" && button_divs[7].textContent == "X") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageX()
             
             break
         }
         if (button_divs[1].textContent == "O" && button_divs[4].textContent == "O" && button_divs[7].textContent == "O") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageO()
             
             break
         }
         if (button_divs[2].textContent == "X" && button_divs[5].textContent == "X" && button_divs[8].textContent == "X") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageX()
             
             break
         }
         if (button_divs[2].textContent == "O" && button_divs[5].textContent == "O" && button_divs[8].textContent == "O") {
-           
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageO()
             
             break
         }
         if (button_divs[0].textContent == "X" && button_divs[4].textContent == "X" && button_divs[8].textContent == "X") {
-           
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageX()
             
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[4].textContent == "O" && button_divs[8].textContent == "O") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageO()
             
             break
         }
         if (button_divs[2].textContent == "X" && button_divs[4].textContent == "X" && button_divs[6].textContent == "X") {
-            
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageX()
            
             break
         }
         if (button_divs[2].textContent == "O" && button_divs[4].textContent == "O" && button_divs[6].textContent == "O") {
-          
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             victoryMessageO()
             
             break
         }
         if (go_counter == 9){
-
+            game_counter++;
+            game_counter_variab.innerText = game_counter;
             drawMessage()
             
             break
         }
-    } 
+    } if (game_counter == 5) {
+        game_over.classList.remove('hidden');
+    }
     
 }
 
@@ -340,3 +383,19 @@ function endGame() {
 // firstly need a way to assign a player to O and a player to X and player two to O's then message a changeover - preferably it would be a random allocation 
 //this means primarly we need a way to switch between O's and X's in terms of order in which they play 
 
+//By 1500 restore the boxes- boxes restored
+//Now chnage the content of the game-counter box to reflect the variable game_counter and hazard test by linking to the win state x in cells 1-3
+
+//appears to be a problem adding more than one from the function to the counter variable gamer_counter
+
+//THe game counter works. Next task is once the game reaches 5 to reset everything and reveal the game over message
+//THe two functions needed are endGame and revealElement which are already written
+// Expriemnt with a simple if statment in our code for when counter gets to 5 and revealEleement
+//Now that the counter ends after 5 we should move to make the player scores sync up 
+// currently it alternates between O going first and X going first 
+//we should establish two variable 
+
+//OK project now is aligning Player 1 and Player 2 to the game and apply a score to both-   break this down.... each game we need to announce player one starts on...
+//Assiging the players
+//game 1 will always be X first 
+//

@@ -8,9 +8,10 @@ body {
     text-align: center;
     border-style: solid;
     height: 300px;
-    width: 300px;
-    margin: 140px auto;
-    margin-bottom: 40px;
+    width:300px;
+    margin: 250px auto;
+    margin-bottom: 10px;
+    margin-top: 150px;
     vertical-align: middle;
     position: relative;
 }
@@ -47,20 +48,16 @@ body {
 }
 
 .counter-1{
-    font-size:40px;
-    border-style: solid;
-    width: 20%;
+    
 }
 .counter-2 {
-    font-size:40px;
-    border-style: solid;
-    width: 20%;
+   
 }
 
 .counter-labels {
     display: inline;
     font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
+    fon
 }
 
 .momma {
@@ -77,6 +74,7 @@ body {
 
 .game-over {
     position: fixed;
+    z-index: 10;
     left: 160px;
     top: 360px;
     font-size: 90px;
