@@ -8,9 +8,9 @@ body {
     text-align: center;
     border-style: solid;
     height: 300px;
-    width:300px;
-    margin: 250px auto;
-    margin-bottom: 10px;
+    width: 300px;
+    margin: 140px auto;
+    margin-bottom: 40px;
     vertical-align: middle;
     position: relative;
 }
@@ -37,8 +37,49 @@ body {
     background-color: purple;
     color: white;
     width: 305px;
+    font-size: 24px;
 
 
 }
 
+.count-container {
+
+}
+
+.counter-1{
+    font-size:40px;
+    border-style: solid;
+    width: 20%;
+}
+.counter-2 {
+    font-size:40px;
+    border-style: solid;
+    width: 20%;
+}
+
+.counter-labels {
+    display: inline;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.momma {
+      position: fixed;
+        left: 300px;
+        top 300px;
+        background-color: white;
+
+    
+}
+.hidden {
+    visibility: hidden;
+}
+
+.game-over {
+    position: fixed;
+    left: 160px;
+    top: 360px;
+    font-size: 90px;
+    color: red;
+}
 

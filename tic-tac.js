@@ -38,12 +38,15 @@
 
 // //import my nodes/cells as buttons
 
-alert('Welcome to Tic Tac Toe: The Game of Kings. O Goes first. GOOD LUCK!')
+
 
 var button_divs = document.querySelectorAll('.cell')
 var button_reset = document.querySelector('.reset')
 
 var go_counter = 0;
+
+
+
 
 function addLetter (event) {
     if (go_counter % 2 == 0) {
@@ -72,6 +75,22 @@ function reset_game() {
         button_divs[i].textContent = '';
     }
 }
+
+// =======================
+// Blue skying the process of players 1+2 assignment and turns
+// second function for adding letters where O goes first
+// if statemnet in front ofd the event listener click assignment at the start. Have a Gaame Counter variable to base this on. If even then Os go first if odd then Xs go first 
+
+
+//Messaging Section - adding revealing elements
+
+var game_over = document.querySelector('.game-over');
+
+function revealElement(element) {
+    
+    element.classList.remove('hidden');
+}
+
 
 //next add a reset button
 // how will this work? Simply as above 
@@ -114,71 +133,106 @@ function reset_game() {
 function checkVictory() {
     for(var j = 0; j < button_divs.length; j++) {
         if (button_divs[0].textContent == "X" && button_divs[1].textContent == "X" && button_divs[2].textContent == "X") {
+
             victoryMessageX()
+            
+            
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[1].textContent == "O" && button_divs[2].textContent == "O") {
+            
             victoryMessageO()
+            
             break
         }
         if (button_divs[3].textContent == "X" && button_divs[4].textContent == "X" && button_divs[5].textContent == "X") {
+            
             victoryMessageX()
+            
             break
         }
         if (button_divs[3].textContent == "O" && button_divs[4].textContent == "O" && button_divs[5].textContent == "O") {
+            
             victoryMessageO()
+            
             break
         }
         if (button_divs[6].textContent == "X" && button_divs[7].textContent == "X" && button_divs[8].textContent == "X") {
+            
             victoryMessageX()
+            
             break
         }
         if (button_divs[6].textContent == "O" && button_divs[7].textContent == "O" && button_divs[8].textContent == "O") {
+            
             victoryMessageO()
+            
             break
         }
         if (button_divs[0].textContent == "X" && button_divs[3].textContent == "X" && button_divs[6].textContent == "X") {
+            
             victoryMessageX()
+            
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[3].textContent == "O" && button_divs[6].textContent == "O") {
+           
             victoryMessageO()
+            
             break
         }
         if (button_divs[1].textContent == "X" && button_divs[4].textContent == "X" && button_divs[7].textContent == "X") {
+            
             victoryMessageX()
+            
             break
         }
         if (button_divs[1].textContent == "O" && button_divs[4].textContent == "O" && button_divs[7].textContent == "O") {
+            
             victoryMessageO()
+            
             break
         }
         if (button_divs[2].textContent == "X" && button_divs[5].textContent == "X" && button_divs[8].textContent == "X") {
+            
             victoryMessageX()
+            
             break
         }
         if (button_divs[2].textContent == "O" && button_divs[5].textContent == "O" && button_divs[8].textContent == "O") {
+           
             victoryMessageO()
+            
             break
         }
         if (button_divs[0].textContent == "X" && button_divs[4].textContent == "X" && button_divs[8].textContent == "X") {
+           
             victoryMessageX()
+            
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[4].textContent == "O" && button_divs[8].textContent == "O") {
+            
             victoryMessageO()
+            
             break
         }
         if (button_divs[2].textContent == "X" && button_divs[4].textContent == "X" && button_divs[6].textContent == "X") {
-           victoryMessageX()
+            
+            victoryMessageX()
+           
             break
         }
         if (button_divs[2].textContent == "O" && button_divs[4].textContent == "O" && button_divs[6].textContent == "O") {
+          
             victoryMessageO()
+            
             break
         }
         if (go_counter == 9){
+
             drawMessage()
+            
             break
         }
     } 
@@ -196,6 +250,22 @@ function victoryMessageX() {
 function drawMessage() {
     console.log("It's a draw!")
 }
+
+
+function endGame() {
+    for (var i = 0; i < button_divs.length; i++) {
+        
+        button_divs[i].textContent =  "*"
+        
+    }
+}
+
+
+
+//now add a new class and words "game over"
+//the endGame function should:
+//fill the remaining cells with red $ signs and produce a message for clicking 
+//by looping through the cells adding $ and a new class 'red-ending'
 
 
 //The next focus is on the process of drawing - likely we'll need to add an if to establish or ---- just an else // nope
@@ -236,5 +306,37 @@ function drawMessage() {
 
 
 
-/// just  a thought but a sky theme with a plane flying across at the end towing the message "you've won" could work
+/// just  a thought but a sky theme with a plane flying across at the end towing the message "you've won" could work-
+//thoughts on giving it an aerial theme- could change signs to something aerial, clouds or planes etc - could 
+
+
+
+//This eveing: add counters for Xs and Os with a win when you reach 3
+//Could think of adding a prompt input for the number of games you want- best of an odd number etc.
+
+
+// 1 october: first make player log counters
+// make a way for player 1 and player two to pick O or X or just alternate who goes first 
+// first make a basic counter in the corner of the screen . 
+
+
+// Morning goals till 12:30 - 
+// get a first message to appear and disappear
+// -"game over" message should disappear then appear within the endGame function
+//hence we will apply a class of hidden with another class of it's style and remove it when we don't want it
+//use the classList.remove() and classList(add) function 
+// first set up and HTML Element and position it
+//then grab it using querySelector then add a classList to it of .hidden to it
+
+// 
+// ok so proof of concept has been established- now apply the principal to a function called reveal element and place that in a 'finished game portion' to work into your code
+//now that we have a game over message and reveal element function the next step is when to establish this message. Perhaps the player should win, their console message should be logged and then game over should appear after then reset button re-hides it
+
+
+//While waiting for inspiration on the front of delayed production of messages, time to do the following for 1 hour:
+// -prepare new messages you want to come up- speicifically a welcome messages
+// -enlarge the 'player counter ' boxes and think of a way to make player one / player two 
+//OK so blue-skying the process of player score.... 
+// firstly need a way to assign a player to O and a player to X and player two to O's then message a changeover - preferably it would be a random allocation 
+//this means primarly we need a way to switch between O's and X's in terms of order in which they play 
 
