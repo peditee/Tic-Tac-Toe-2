@@ -50,39 +50,46 @@ var go_counter = 0;
 var game_counter = 0;
 var game_counter_variab = document.querySelector('.counter-game-number')
 
+var player1_count = 0
+var player2_count = 0
+player_1_gamecount = document.querySelector('.counter-1')
+player_2_gamecount = document.querySelector('.counter-2')
 
 function addLetterXfirst (event) {
+
+    
     if (go_counter % 2 == 0) {
-        event.target.textContent = 'O';
+        event.target.textContent = 'X';
         
     } else {
-        event.target.textContent = 'X';
+        event.target.textContent = 'O';
     }
     go_counter++;
     checkVictory();
     
 }
 function addLetterOfirst (event) {
+   
     if (go_counter % 2 == 0) {
-        event.target.textContent = 'X';
+        event.target.textContent = 'O';
         
     } else {
-        event.target.textContent = 'O';
+        event.target.textContent = 'X';
     }
     go_counter++;
     checkVictory();
     
 }
 
-if (game_counter % 2 == 0) {
+if (game_counter == 0 || game_counter == 2 || game_counter == 4) {
     for(var i = 0; i < button_divs.length; i++) {
-        button_divs[i].addEventListener('click', addLetterXfirst)
+        button_divs[i].addEventListener('click', addLetterOfirst)
     }
     
     
-} else {
+} else if (game_counter == 1 || game_counter == 3 || game_counter == 5)  {
     for(var i = 0; i < button_divs.length; i++) {
-        button_divs[i].addEventListener('click', addLetterOfirst)
+        button_divs[i].addEventListener('click', addLetterXfirst)
     }
 }       
 
@@ -91,10 +98,26 @@ button_reset.addEventListener('click', reset_game)
 
 function reset_game() {
     
-    go_counter = 0;
+    
     for (var i = 0; i < button_divs.length; i++) {
         button_divs[i].textContent = '';
+        button_divs[i].removeEventListener('click', addLetterOfirst)
+        button_divs[i].removeEventListener('click', addLetterXfirst)
     }
+
+    if (game_counter == 0 || game_counter == 2 || game_counter == 4) {
+        for(var i = 0; i < button_divs.length; i++) {
+            button_divs[i].addEventListener('click', addLetterOfirst)
+        }
+        
+        
+    } else if (game_counter == 1 || game_counter == 3 || game_counter == 5)  {
+        console.log('X direction first')
+        for(var i = 0; i < button_divs.length; i++) {
+            button_divs[i].addEventListener('click', addLetterXfirst)
+        }
+    }   
+    go_counter = 0;
 }
 
 // =======================
@@ -109,6 +132,8 @@ function reset_game() {
 //Messaging Section - adding revealing elements
 
 var game_over = document.querySelector('.game-over');
+var player_1_win_message = document.querySelector('.player-1-victory')
+var player_2_win_message = document.querySelector('.player-2-victory')
 
 function revealElement(element) {
     
@@ -157,114 +182,96 @@ function revealElement(element) {
 function checkVictory() {
     for(var j = 0; j < button_divs.length; j++) {
         if (button_divs[0].textContent == "X" && button_divs[1].textContent == "X" && button_divs[2].textContent == "X") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player2Victory() 
             victoryMessageX()
-            
-            
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[1].textContent == "O" && button_divs[2].textContent == "O") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player1Victory()
             victoryMessageO()
             
             break
         }
         if (button_divs[3].textContent == "X" && button_divs[4].textContent == "X" && button_divs[5].textContent == "X") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player2Victory()
             victoryMessageX()
             
             break
         }
         if (button_divs[3].textContent == "O" && button_divs[4].textContent == "O" && button_divs[5].textContent == "O") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player1Victory()
             victoryMessageO()
             
             break
         }
         if (button_divs[6].textContent == "X" && button_divs[7].textContent == "X" && button_divs[8].textContent == "X") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player2Victory()
             victoryMessageX()
             
             break
         }
         if (button_divs[6].textContent == "O" && button_divs[7].textContent == "O" && button_divs[8].textContent == "O") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player1Victory()
             victoryMessageO()
             
             break
         }
         if (button_divs[0].textContent == "X" && button_divs[3].textContent == "X" && button_divs[6].textContent == "X") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player2Victory()
             victoryMessageX()
             
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[3].textContent == "O" && button_divs[6].textContent == "O") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player1Victory()
             victoryMessageO()
             
             break
         }
         if (button_divs[1].textContent == "X" && button_divs[4].textContent == "X" && button_divs[7].textContent == "X") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player2Victory()
             victoryMessageX()
             
             break
         }
         if (button_divs[1].textContent == "O" && button_divs[4].textContent == "O" && button_divs[7].textContent == "O") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player1Victory()
             victoryMessageO()
             
             break
         }
         if (button_divs[2].textContent == "X" && button_divs[5].textContent == "X" && button_divs[8].textContent == "X") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player2Victory()
             victoryMessageX()
             
             break
         }
         if (button_divs[2].textContent == "O" && button_divs[5].textContent == "O" && button_divs[8].textContent == "O") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player1Victory()
             victoryMessageO()
             
             break
         }
         if (button_divs[0].textContent == "X" && button_divs[4].textContent == "X" && button_divs[8].textContent == "X") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player2Victory()
             victoryMessageX()
             
             break
         }
         if (button_divs[0].textContent == "O" && button_divs[4].textContent == "O" && button_divs[8].textContent == "O") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player1Victory()
             victoryMessageO()
             
             break
         }
         if (button_divs[2].textContent == "X" && button_divs[4].textContent == "X" && button_divs[6].textContent == "X") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player2Victory()
             victoryMessageX()
            
             break
         }
         if (button_divs[2].textContent == "O" && button_divs[4].textContent == "O" && button_divs[6].textContent == "O") {
-            game_counter++;
-            game_counter_variab.innerText = game_counter;
+            player1Victory()
             victoryMessageO()
             
             break
@@ -278,6 +285,13 @@ function checkVictory() {
         }
     } if (game_counter == 5) {
         game_over.classList.remove('hidden');
+        endGame();
+    } if (player1_count > 2) {
+        player2OverallWin();
+        endGame();
+    } if (player2_count > 2) {
+        player2OverallWin();
+        endGame;
     }
     
 }
@@ -303,8 +317,27 @@ function endGame() {
     }
 }
 
+function player2Victory() {
+    game_counter++;
+    game_counter_variab.innerText = game_counter;
+    player2_count++;
+    player_2_gamecount.innerText = player2_count;
+}
 
+function player1Victory() {
+    game_counter++;
+    game_counter_variab.innerText = game_counter;
+    player1_count++;
+    player_1_gamecount.innerText = player1_count;
+}
 
+function player1OverallWin() {
+    player_1_win_message.classList.remove('hidden');
+}
+
+function player2OverallWin() {
+    player_2_win_message.classList.remove('hidden');
+}
 //now add a new class and words "game over"
 //the endGame function should:
 //fill the remaining cells with red $ signs and produce a message for clicking 
@@ -399,3 +432,12 @@ function endGame() {
 //Assiging the players
 //game 1 will always be X first 
 //
+//we troed an if else statement to maintain the differnence with the player 1 +2 to little effect. A boolean perhaps could be a better monitor... 
+//write one that starts as is x then else exceutes a different line of code
+
+//We've established a switch between O's and X's each turn. Now to Assign Player 1 and PLayer 2 to Os and crosses respectively \
+
+//then work in a method of assiging each 'won game' to each player. 
+
+//Now that each players game score updates as they win we need to establish a winning state of being the first to reach '3'
+//This will likely need a new function to checl the variables player1_count and player2_count if three then player 1 wins or player 2 wins 

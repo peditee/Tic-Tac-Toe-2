@@ -43,14 +43,15 @@ body {
 
 }
 
-.count-container {
-
+.counter-game-number {
+    font-size: 30px;
 }
 
 .counter-1{
-    
+    font-size: 30px;
 }
 .counter-2 {
+    font-size: 30px;
    
 }
 
@@ -81,3 +82,20 @@ body {
     color: red;
 }
 
+.player-1-victory {
+    position: fixed;
+    z-index: 10;
+    left: 160px;
+    top: 170px;
+    font-size: 90px;
+    color: yellow;
+}
+
+.player-2-victory {
+    position: fixed;
+    z-index: 10;
+    left: 160px;
+    top: 170px;
+    font-size: 90px;
+    color: orange;
+}
