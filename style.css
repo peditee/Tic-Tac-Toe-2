@@ -61,14 +61,7 @@ body {
     fon
 }
 
-.momma {
-      position: fixed;
-        left: 300px;
-        top 300px;
-        background-color: white;
 
-    
-}
 .hidden {
     visibility: hidden;
 }
@@ -98,4 +91,17 @@ body {
     top: 170px;
     font-size: 90px;
     color: orange;
+}
+
+.player-1-container {
+  height: 100px;
+  font-family: 'Indie Flower', cursive;
+}
+.player-2-container {
+  height: 100px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.game-counter {
+  font-family: 'Indie Flower', cursive;
 }
